@@ -1,0 +1,63 @@
+header{
+	background: #ccc;
+	font-size: 20px;
+}
+header img{
+	height: 40px;
+	width: 40px;
+}
+header a{
+	position: absolute;
+	right : 100px;
+	top: 35px;
+	font-size: 20px;
+	color: #f66;
+	text-decoration: none;
+}
+#left{
+	float: left;
+	width: 45%;
+	height:100%;
+}
+img.log{
+	width: 100%;
+	height: auto;
+}
+#right{
+	float: left;
+	width: 54%;
+	height: 100%;
+}
+#login{
+	line-height: 60px;
+	position: absolute;
+	widows: 80%;
+	right: 25%;
+	top:20%;
+	font-size: 20px;
+}
+.choose{
+	font-size: 16px;
+}
+#login a{
+	display: flex;
+	text-decoration: none;
+	color: #ff5151;
+	position: absolute;
+	top:200px;
+	right: 50px;
+	background-color: #0080ff;
+	border-radius: 6px;
+	width: 70px;
+	height: 40px;
+	align-items: center;
+	justify-content: center;
+}
+.footer{
+	position: absolute;
+	top:600px;
+	left: 100px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 20px;
+}
