@@ -1,0 +1,83 @@
+<a href="/" id='goback'>返回</a>
+<div class="postContent" id="postContent">
+   
+   
+    {{#each re}}
+    <h1 id="posttitle">{{this.title}}</h1>
+
+    {{/each}}
+    {{#if is_login}}
+
+    {{#if is_focus}}
+    <button id="focusOn" >
+        <a href="/focus?meg={{atid}}" class="focus" id="focus">关注</a>
+    </button>
+    {{/if}}
+   
+    <a href="/good?meg={{atid}}" id="good">
+        <img src="/img/good.png" style="width: 20px; height: 20px;">
+       
+    </a>
+
+    <!-- 收藏前 -->
+    {{#if not_collect}}
+    <a href="/collect?meg={{atid}}" id="collect">
+        <img src="/img/collect_no.png" style="width: 20px; height: 20px;">收藏
+    </a>
+    {{/if}}
+
+    <!-- 收藏后 -->
+    {{#if is_collect}}
+    <a href="" id="collect">
+        <img src="/img/collect_yes.png"  style="width: 20px; height: 20px;">已收藏
+    </a>
+    {{/if}}
+    {{/if}}
+    <!-- <button id="focusOn" >
+        <a href="/focus?meg={{atid}}" class="focus" id="focus">关注</a>
+    </button>
+<a href="/collect?meg={{atid}}" id="collect">
+        <img src="/img/collect_no.png" style="width: 20px; height: 20px;">收藏
+    </a> -->
+    {{#each re}}
+    <!-- <a href="/good?meg={{atid}}" id="good">
+        <img src="/img/good.png" style="width: 20px; height: 20px;">
+       
+    </a> -->
+    <div id="message3">浏览数:{{this.look_count}}</div>
+    <img id="look" src="/img/look.png" style="width: 30px; height: 20px;">
+    <div id="message2">点赞数:{{this.good_count}}</div>
+
+    <div id="message">
+   
+    作者:<img src="{{img}}" id="post_Author" style="width: 20px; height: 20px;">{{this.author}} &nbsp;&nbsp;&nbsp;{{this.time}}
+    </div>
+    <hr>
+    <div id="post-content">{{this.aticles}}</div>
+    {{/each}}
+    </div>
+    <!-- 写评论区 -->
+
+    {{#if is_login}}
+    <div id="loginReply">
+    <form action="/reply?mend={{atid}}" method="post">
+        <textarea class="form-control" rows="3" name="replyPost" id="replyPost"  placeholder="想对作者说些什么"></textarea>
+        <input type="submit" class="btn btn-default" name="replyBtn" value="发表评论"
+        id="replyBtn">
+        <p id="reply-tip"></p>
+    </form>
+    </div>
+    {{/if}}
+    <br>
+    <!-- 评论区 -->
+    <div id="replyForm">
+    {{#each re1}}
+    <div>
+        <div id="reply-title">{{this.author}}</div>
+        <div id="reply-time">{{this.time}}</div>
+        <div id="reply-content">{{this.content}}</div>
+    </div>
+    <hr>
+   
+    {{/each}}
+    </div>
